@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap");
+
+@keyframes color-change {
+  0% {
+    background-color: blue;
+  }
+  50% {
+    background-color: red;
+  }
+  100% {
+    background-color: blue;
+  }
+}
+
+/* Variabler för användning i hela dokumentet */
+:root {
+  --div-color: rgba(145, 145, 145, 0.424);
+  --primary-color: #ffc107;
+  --secondary-color: #000;
+  --spacing: 10px;
+}
+
+/* Generella stilmallar för alla element */
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Stilmallar för navigeringsfältet */
+.navbar {
+  background-color: var(--secondary-color);
+}
+
+.navbar-nav .nav-link {
+  color: #050303;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #000;
+  background-color: #090808;
+}
+
+.fa-bars {
+  color: white;
+}
+/* Stilmallar för raderna i layouten */
+.row + .row .col {
+  padding-top: 10px;
+}
+
+/* Stilmallar för länkar i navigeringsfältet */
+.navbar-nav .nav-link:hover {
+  color: #ffc107;
+}
+
+/* Stilmallar för kort (card) */
+.card {
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation-name: color-change;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+
+.card-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+.index-card {
+  background-color: var(--div-color);
+}
+
+/* Stilmallar för sidfoten */
+
+footer {
+  width: 100%;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Stilmallar för bilder i kolumner */
+.col-sm-4 img {
+  width: 100%;
+  height: auto;
+}
+
+.col-md-4.image-div.main-image-div {
+  margin-right: 5%;
+}
+
+.project-div {
+  width: 60%;
+}
+
+.image-div {
+  padding: 10px;
+  background-color: var(--div-color);
+  border-radius: 20px;
+  margin: 0 5px;
+}
+
+.image-container {
+  margin-top: 20px;
+}
+
+/* Stilmallar för specifik bild */
+img[src="Projekt1_Large.png"] {
+  width: 50%;
+  float: left;
+  margin-right: 2%;
+}
+
+/* Stilregler för elementet "div.text" */
+div.text {
+  width: 68%;
+  float: left;
+}
+
+/* Stilregler för elementet med klassen "projekt1-div" */
+.projekt1-div {
+  background-color: var(--div-color);
+  border-radius: 25px;
+  padding: 20px 15px;
+  text-align: center;
+}
+
+/* Stilregler för elementet med klassen "projekt-section" */
+.projekt-section {
+  padding: 30px 20px;
+  background-color: white;
+  height: auto;
+}
+
+/* Media Query: Stilregler när skärmens bredd är högst 768px */
+
+@media screen and (max-width: 900px) {
+  .projekt-section {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  div.text {
+    width: 100%;
+    float: none;
+  }
+
+  img[src="Projekt1_Large.png"] {
+    float: none; /* Ta bort flytten från höger sida */
+    margin-right: 0; /* Ta bort marginalen från höger sida */
+    width: 100%; /* Bredden ska ta upp hela elementet */
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 595px) {
+  .projekt-section {
+    height: auto;
+  }
+  .project-div {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --div-color: rgba(0, 0, 0, 0.424);
+    --primary-color: #ffc107;
+    --secondary-color: #393939;
+  }
+
+  .projekt-section {
+    background-color: var(--secondary-color);
+  }
+
+  body {
+    background-color: #333;
+    color: #fff;
+  }
+
+  .navbar {
+    background-color: #fff;
+  }
+
+  .navbar-brand,
+  .navbar-nav .nav-link {
+    color: #070000;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #ffc107;
+  }
+
+  .card {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+
+  footer {
+    background-color: #1f1f1f;
+    color: #fff;
+  }
+}
